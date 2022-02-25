@@ -19,6 +19,7 @@ public class BubbleSortTest {
         int compares = bubbleSort.sort(inputArray);
 
         // then
+        assertThat(inputArray).isEqualTo(new int[]{1, 2, 3, 4, 5});
         assertThat(compares).isEqualTo(4);
     }
 
@@ -31,8 +32,8 @@ public class BubbleSortTest {
         int compares = bubbleSort.sort(inputArray);
 
         // then
-        assertThat(compares).isEqualTo(10);
         assertThat(inputArray).isEqualTo(new int[]{1, 2, 3, 4, 5});
+        assertThat(compares).isEqualTo(10);
     }
 
     @Test
@@ -44,8 +45,8 @@ public class BubbleSortTest {
         int compares = bubbleSort.sort(inputArray);
 
         // then
-        assertThat(compares).isEqualTo(98);
         assertThat(inputArray).isEqualTo(inputArray);
+        assertThat(compares).isEqualTo(98);
     }
 
     @Test
@@ -57,9 +58,9 @@ public class BubbleSortTest {
         int compares = bubbleSort.sort(inputArray);
 
         // then
-        assertThat(compares).isEqualTo(4851);
         int[] expectedResult = Stream.iterate(1, i -> i + 1).limit(99).mapToInt(i -> i).toArray();
         assertThat(inputArray).isEqualTo(expectedResult);
+        assertThat(compares).isEqualTo(4851);
     }
 
     @Test
@@ -71,7 +72,7 @@ public class BubbleSortTest {
         int compares = bubbleSort.sort(inputArray);
 
         // then
-        assertThat(compares).isEqualTo(10);
         assertThat(inputArray).isEqualTo(new int[]{1, 2, 3, 4, 5});
+        assertThat(compares).isEqualTo(10);
     }
 }
