@@ -75,4 +75,19 @@ public class BubbleSortTest {
         assertThat(inputArray).isEqualTo(new int[]{1, 2, 3, 4, 5});
         assertThat(compares).isEqualTo(10);
     }
+
+    @Test
+    void shouldSortArrayWithOneChangeAtTheStart() {
+        // given
+        int[] inputArray = {2, 1, 3, 4, 5};
+
+        // when
+        int compares = bubbleSort.sort(inputArray);
+
+        // then
+        assertThat(inputArray).isEqualTo(new int[]{1, 2, 3, 4, 5});
+        assertThat(compares)
+                .as("W pierwszej iteracji 4 porównania, a w drugiej 3.\nW drugiej nie ma zamian, więc kończymy")
+                .isEqualTo(7);
+    }
 }
